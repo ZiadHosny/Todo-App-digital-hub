@@ -1,0 +1,73 @@
+@font-face {
+    font-family: IranSans;
+    src: url(./assets/Font/Sans_a4fran3.woff);
+    font-weight: bold;
+}
+
+* {
+    font-family: "IranSans" !important;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inputStyles {
+    @apply bg-slate-100 text-slate-600 dark:text-slate-200 rounded-lg p-3 outline-transparent border-2 border-transparent hover:border-violet-600 focus:border-violet-600 focus:outline-none transition dark:bg-slate-800;
+}
+
+.btn {
+    @apply bg-yellow-500 hover:bg-yellow-500 py-3 px-6 text-slate-50 rounded-lg w-auto transition dark:bg-yellow-600 dark:hover:bg-yellow-700;
+}
+
+.btn:active {
+    @apply scale-95;
+}
+
+@layer components {
+    .tasksList>li .not-started article {
+        @apply bg-yellow-500 text-violet-700 dark:bg-yellow-500;
+    }
+
+    /* 
+    .tasksList>li:first-of-type article .description {
+        @apply text-violet-700;
+    } */
+
+    /* .tasksList>li:first-of-type article>div {
+        @apply border-slate-900 dark:border-slate-900;
+    } */
+
+    .inputStyles::placeholder {
+        @apply text-slate-400 dark:text-slate-400;
+    }
+
+    .stylesInputsField input,
+    .stylesInputsField textarea,
+    .stylesInputsField select {
+        @apply inputStyles mt-1;
+    }
+
+    .stylesInputsField label {
+        @apply mb-4 text-slate-600 dark:text-slate-500;
+    }
+}
+
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-slate-200 dark:bg-slate-800;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-700 rounded-md border border-red-400;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+}
