@@ -8,7 +8,7 @@ const defaultTasks: Task[] = [
   {
     title: "Finished Task",
     description: "Write your description",
-    dir: "Main",
+    dir: "Finished",
     completed: true,
     id: "Task0",
     status: 'Finished'
@@ -16,23 +16,23 @@ const defaultTasks: Task[] = [
   {
     title: "NotStarted Task",
     description: "Write your description",
-    dir: "Main",
+    dir: "Not Started",
     completed: true,
     id: "Task1",
-    status: 'NotStarted'
+    status: 'Not Started'
   },
   {
     title: "InProgress Task",
     description: "Write your description",
-    dir: "Main",
+    dir: "In Progress",
     completed: true,
     id: "Task2",
-    status: 'InProgress'
+    status: 'In Progress'
   },
   {
     title: "Finished Task 2",
     description: "Write your description",
-    dir: "Main",
+    dir: "Finished",
     completed: true,
     id: "Task3",
     status: 'Finished'

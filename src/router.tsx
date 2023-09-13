@@ -14,11 +14,11 @@ const TasksSection: React.FC = () => {
                 <Route path="/" element={<AllTasks />} />
                 <Route
                     path="/NotStarted"
-                    element={<Tasks title="Not Started tasks" status="NotStarted" />}
+                    element={<Tasks title="Not Started tasks" status="Not Started" />}
                 />
                 <Route
                     path="/InProgress"
-                    element={<Tasks title="InProgress tasks" status="InProgress" />}
+                    element={<Tasks title="In Progress tasks" status="In Progress" />}
                 />
                 <Route
                     path="/Finished"

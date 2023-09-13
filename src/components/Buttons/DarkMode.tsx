@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 const DarkMode: React.FC = () => {
+
   const [isCurrentDarkmode, setIsCurrentDarkmode] = useState<boolean>(() => {
     const darkModeWasSet = localStorage.getItem("darkmode");
     if (darkModeWasSet) return true;
     else return false;
   });
+  
   const toggleDarkMode = () => {
     setIsCurrentDarkmode((prevState) => !prevState);
   };

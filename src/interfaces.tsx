@@ -1,4 +1,4 @@
-export type Status = 'NotStarted' | 'InProgress' | 'Finished'
+export type Status = 'Not Started' | 'In Progress' | 'Finished'
 
 export interface Task {
   title: string;

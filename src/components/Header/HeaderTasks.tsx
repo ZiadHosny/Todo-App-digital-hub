@@ -17,8 +17,6 @@ const HeaderTasks: React.FC = () => {
                 title="open menu">
                 <MenuIcon />
             </button>
-            <div className="text-center">
-            </div>
             <div className="flex flex-1">
                 <span className="text-slate-600 dark:text-slate-200 uppercase font-bold text-sm block xl:hidden">
                     TODO

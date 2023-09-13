@@ -8,8 +8,8 @@ const ModalCreateTask: React.FC<{
   nameForm: string;
   onConfirm: (task: Task) => void;
 }> = ({ onClose, task, nameForm, onConfirm }) => {
-  const status: Status[] = ['NotStarted', 'InProgress', 'Finished']
 
+  const status: Status[] = ['Not Started', 'In Progress', 'Finished']
 
   const [description, setDescription] = useState<string>(() => {
     if (task) {
@@ -17,6 +17,7 @@ const ModalCreateTask: React.FC<{
     }
     return "";
   });
+
   const [title, setTitle] = useState<string>(() => {
     if (task) {
       return task.title;
@@ -25,13 +26,6 @@ const ModalCreateTask: React.FC<{
   });
 
   const isTitleValid = useRef<Boolean>(false);
-
-  const [isCompleted, setIsCompleted] = useState<boolean>(() => {
-    if (task) {
-      return task.completed;
-    }
-    return false;
-  });
 
   const [selectedStatus, setSelectedStatus] = useState<Status>(() => {
     if (task) {
@@ -50,7 +44,7 @@ const ModalCreateTask: React.FC<{
         title: title,
         description: description,
         dir: selectedStatus,
-        completed: isCompleted,
+        completed: true,
         id: task?.id ? task.id : Date.now().toString(),
         status: selectedStatus
       };
