@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Status, Task } from "../../interfaces";
 import Modal from "./Modal";
+import { useLocation } from "react-router-dom";
 
 const ModalCreateTask: React.FC<{
   onClose: () => void;
@@ -8,6 +9,8 @@ const ModalCreateTask: React.FC<{
   nameForm: string;
   onConfirm: (task: Task) => void;
 }> = ({ onClose, task, nameForm, onConfirm }) => {
+
+  const pathname = useLocation().pathname.split('/')[1]
 
   const status: Status[] = ['Not Started', 'In Progress', 'Finished']
 
@@ -30,6 +33,9 @@ const ModalCreateTask: React.FC<{
   const [selectedStatus, setSelectedStatus] = useState<Status>(() => {
     if (task) {
       return task.status;
+    }
+    if (pathname) {
+      return status.find((e) => e.replace(' ', '') === pathname) ?? status[0]
     }
     return status[0];
   });
